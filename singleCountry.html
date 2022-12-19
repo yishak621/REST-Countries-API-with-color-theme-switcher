@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <!--stylesheets-->
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="/styles/darkmode.css" />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <h1 class="header-title">Where in the world?</h1>
+        <!--dark mode-->
+        <button class="dark-btn">
+          <i class="fa-sharp fa-solid fa-sun"></i>
+          <i class="fa-solid fa-circle-notch"></i>
+          <i class="fa-regular fa-moon"></i>
+        </button>
+      </div>
+    </header>
+    <main>
+      <!--single page -->
+      <article class="single-page__article">
+        <div class="single-page__flag">
+          <a href="index.html"
+            ><button class="btn btn-back">
+              <i class="fa-solid fa-arrow-left-long"></i>
+              Back
+            </button></a
+          >
+          <picture>
+            <img src="" alt="sample img" class="single-page-img" />
+          </picture>
+        </div>
+        <div class="single-page__description__page">
+          <h1 class="single-page__country__name"></h1>
+          <!-- description wrapper-->
+          <div class="country-description__wrapper">
+            <!--main description-->
+            <div class="country-description__wrapper__main">
+              <span class="flex"
+                ><span class="title">Native-name:</span
+                ><span class="native-result"></span>
+              </span>
+              <span class="flex"
+                ><span class="title">Population:</span
+                ><span class="population-result"></span>
+              </span>
+
+              <span class="flex"
+                ><span class="title">Region:</span>
+                <span class="region-result"></span>
+              </span>
+              <span class="flex"
+                ><span class="title">Sub-Region:</span
+                ><span class="subregion-result"></span>
+              </span>
+              <span class="flex"
+                ><span class="title">Capital:</span
+                ><span class="capital-result"></span>
+              </span>
+            </div>
+
+            <!--other description-->
+            <div class="country-description__wrapper__other">
+              <span class="flex"
+                ><span class="title">Top Level Domain:</span>
+                <span class="tld-result"></span>
+              </span>
+              <span class="flex"
+                ><span class="title">Currencies:</span
+                ><span class="currencies-result"></span>
+              </span>
+              <span class="flex"
+                ><span class="title">Languages:</span
+                ><span class="languages-result"></span>
+              </span>
+            </div>
+          </div>
+          <!--border desription-->
+          <div class="border-country">
+            <h2>border countries:</h2>
+            <div class="border-country__btn__wrapper">
+              <!--filled by JS-->
+            </div>
+          </div>
+        </div>
+      </article>
+      <!--loading GIF-->
+      <article class="loading">
+        <img src="./loading.gif" alt="loading" />
+      </article>
+    </main>
+    <!--script-->
+    <script src="/index.js" type="module"></script>
+    <script src="/singleCountry.js" type="module"></script>
+  </body>
+</html>

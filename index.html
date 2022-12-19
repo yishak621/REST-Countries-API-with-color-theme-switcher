@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>countriesAPI.com</title>
+    <!--stylesheets-->
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="/styles/darkmode.css" />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <h1 class="header-title">Where in the world?</h1>
+        <!--dark mode-->
+        <button class="dark-btn">
+          <i class="fa-sharp fa-solid fa-sun"></i>
+          <i class="fa-solid fa-circle-notch"></i>
+          <i class="fa-regular fa-moon"></i>
+        </button>
+      </div>
+    </header>
+    <main>
+      <!--filter section-->
+      <div class="filter-section">
+        <!--filter by search-->
+        <div class="filter-search-input">
+          <form action="GET" class="filter-search-form">
+            <input
+              type="text"
+              id="filter-search"
+              placeholder="Search for a country..."
+            />
+            <i class="fas fa-search"></i>
+          </form>
+        </div>
+
+        <!--filter by btn-->
+        <form action="GET" class="filter-dropdown">
+          <select name="continents" id="continents">
+            <!--filled by JS-->
+          </select>
+        </form>
+      </div>
+
+      <!-- countries display-->
+      <section class="countries-display">
+        <div class="loading-circle"></div>
+      </section>
+      <article class="loading">
+        <img src="./loading.gif" alt="loading" />
+      </article>
+    </main>
+    <!--script-->
+    <script src="/index.js" type="module"></script>
+  </body>
+</html>
