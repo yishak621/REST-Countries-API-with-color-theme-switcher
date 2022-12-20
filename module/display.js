@@ -12,7 +12,7 @@ const showCountry = async (url) => {
 
   //event listner to select options
   const select = document.getElementById('continents');
-  select.addEventListener('click', function () {
+  select.addEventListener('change', function () {
     const selectedvalue = select.value;
     //All
     if (selectedvalue === 'all') {
