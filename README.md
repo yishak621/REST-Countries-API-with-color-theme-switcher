@@ -126,7 +126,7 @@ borderCountry.addEventListener('click', async (e) => {
   const allData = async (url) => {
     const data = await fetchAllData(url);
     const newDatalist = await data.find((obj) => {
-      return obj.fifa === shortname;
+      return obj.cca3 === shortname;
     });
 
     return newDatalist;

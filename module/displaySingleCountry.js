@@ -20,7 +20,6 @@ const displaySingleCountry = (data) => {
   const singleCountryTitle = getElement('.single-page__country__name');
   //OBJECT destructuring
   const {
-    altSpellings,
     name: { nativeName, common },
     borders,
     population,
@@ -39,7 +38,7 @@ const displaySingleCountry = (data) => {
     .map((lang) => {
       return lang;
     })
-    .join('');
+    .join('/');
 
   //Further destructuring arrays and object
   const newCapital = capital
@@ -87,7 +86,7 @@ borderCountry.addEventListener('click', async (e) => {
   const allData = async (url) => {
     const data = await fetchAllData(url);
     const newDatalist = await data.find((obj) => {
-      return obj.fifa === shortname;
+      return obj.cca3 === shortname;
     });
 
     return newDatalist;
