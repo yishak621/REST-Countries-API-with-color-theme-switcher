@@ -95,6 +95,12 @@ main {
   justify-content: space-between;
   align-items: center;
 }
+.header-container,
+.filter-section,
+.countries-display {
+  max-width: $max-width;
+  margin: 0 auto;
+}
 .header-title {
   font-size: 1.1rem;
   text-transform: none;
@@ -108,8 +114,9 @@ main {
   margin-top: 3.5rem;
 }
 #filter-search {
-  padding: 1.25rem 15.5rem 1rem 2rem;
+  padding: 1.25rem 5rem 1rem 2rem;
   text-align: center;
+  max-width: 95vw;
 }
 #filter-search:focus::placeholder {
   color: transparent;
@@ -143,7 +150,7 @@ main {
 }
 select {
   /** for the dropdown indicator */
-  appearance: none; //removind default arrow
+  appearance: none; //removing default arrow
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right 1.5rem center;
@@ -186,19 +193,21 @@ select {
   column-gap: 2.5rem;
   justify-content: center;
   align-items: center;
-  max-width: $max-width;
-  margin: 0 auto;
 }
 .single-country__wrapper {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 50% 50%;
+
   max-width: 16.5rem;
   margin-top: 3.4rem;
   margin-left: 0.5rem;
   background-color: #fff;
   border-radius: $radius;
   overflow: hidden;
+}
+.single-country__wrapper:hover {
+  outline: 1px solid green;
 }
 .single-country__discription__wrapper {
   display: flex;
@@ -282,6 +291,7 @@ select {
 }
 .single-page__description__page {
   margin-top: 1.5rem;
+  max-width: 95vw;
   h1 {
     font-size: 1.5rem;
   }
@@ -293,15 +303,18 @@ select {
 }
 .country-description__wrapper__main,
 .country-description__wrapper__other {
-  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  margin-top: 2rem;
   font-size: 0.95rem;
 }
 .border-country__btn__wrapper {
   display: flex;
   gap: 1.2rem;
+  max-width: 400px;
+  overflow-x: scroll;
 }
 //single page btn
 .btn {
@@ -375,7 +388,6 @@ select {
 }
 
 //Page Loading
-
 .loading {
   min-height: 100vh;
   display: grid;
@@ -399,13 +411,13 @@ select {
 .loading-circle {
   width: 6rem;
   height: 6rem;
-  border: 5px solid $clr-red-dark;
+  border: 5px solid rgb(0, 8, 255);
   border-radius: 50%;
-  border-top-color: $clr-green-light;
+  border-top-color: red;
   animation: spinner 0.6s linear infinite;
 
   position: absolute;
-  left: 50%;
+  left: 45%;
   top: 60%;
 }
 
@@ -414,4 +426,5 @@ select {
   font-size: 1.2rem;
   color: $clr-red-dark;
   margin-top: 4rem;
+  line-height: 1.3;
 }

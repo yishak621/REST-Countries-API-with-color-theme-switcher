@@ -31,8 +31,8 @@ html {
   text-transform: capitalize;
   font-weight: bold;
 
-  background: var(--clr-primary);
-  color: var(--clr-font);
+  background: black;
+  color: white;
   border-color: transparent;
 
   transition: all 0.3s linear;
@@ -43,7 +43,7 @@ html {
 }
 
 .dark-theme .dark-btn {
-  background-color: var(--clr-font);
+  background-color: white;
   color: black;
 }
 

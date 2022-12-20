@@ -18,6 +18,7 @@ const displayCountryDOM = async () => {
   }
 };
 
+//event
 window.addEventListener('DOMContentLoaded', displayCountryDOM);
 
 window.addEventListener('load', function () {

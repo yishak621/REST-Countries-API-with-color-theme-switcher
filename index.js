@@ -10,7 +10,10 @@ import searchForm from './module/search.js';
 const loadingGif = getElement('.loading');
 const allurl = 'https://restcountries.com/v3.1/all';
 
+window.addEventListener('DOMContentLoaded', function () {
+  showCountry(allurl);
+});
+
 window.addEventListener('load', function () {
   loadingGif.classList.add('hide-loading');
-  showCountry(allurl);
 });

@@ -1,10 +1,12 @@
 import { getElement } from './getElement.js';
 
+//Declaration
 const toggleBtn = getElement('.dark-btn');
 const sun = getElement('.fa-sun');
 const circle = getElement('.fa-circle-notch');
 const moon = getElement('.fa-moon');
 
+//event
 toggleBtn.addEventListener('click', () => {
   document.documentElement.classList.toggle('dark-theme'); //acess the whole document body html
 
