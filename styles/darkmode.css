@@ -89,3 +89,7 @@ html {
 .open-logo {
   display: block;
 }
+
+.dark-theme .fixed-nav {
+  background: rgba(15, 11, 11, 0.5);
+}

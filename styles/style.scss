@@ -494,3 +494,11 @@ select {
   transition: all 0.5s;
   z-index: 12;
 }
+@media screen and (max-width: 800px) {
+  .fixed-nav {
+    row-gap: 0 !important;
+  }
+  .fixed-nav #continents {
+    margin-top: 0;
+  }
+}
