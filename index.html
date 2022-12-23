@@ -19,6 +19,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     />
   </head>
+  <!--data AOS-->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <body>
     <!--header-->
     <header>
@@ -35,7 +37,7 @@
 
     <main>
       <!--filter section-->
-      <div class="filter-section">
+      <div class="filter-section" id="filter-bar">
         <!--filter by search-->
         <div class="filter-search-input">
           <form action="GET" class="filter-search-form">
@@ -64,8 +66,16 @@
       <article class="loading">
         <img src="./loading.gif" alt="loading" />
       </article>
+      <!--page navigation top link-->
+      <button class="top-link">
+        <a href="#"><i class="fa-solid fa-chevron-up"></i> </a>
+      </button>
     </main>
     <!--script-->
     <script src="/index.js" type="module"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

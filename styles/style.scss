@@ -457,3 +457,40 @@ select {
   margin-top: 0;
   font-size: 1rem;
 }
+
+.top-link {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 1.25rem;
+  padding: 0.3rem 0.4rem;
+  border-radius: 50%;
+
+  background: $Soft_red;
+  color: $Yellow;
+  border-color: green;
+
+  animation: up 3s ease-in-out infinite;
+  visibility: hidden;
+  z-index: -100;
+  cursor: pointer;
+}
+.show-link {
+  visibility: visible;
+  z-index: 100;
+}
+/* fixed nav */
+.fixed-nav {
+  position: fixed;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  background: rgba($color: #ffffff, $alpha: 0.7);
+  box-shadow: $shadow-3;
+  transition: all 0.5s;
+  z-index: 12;
+}

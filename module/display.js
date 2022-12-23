@@ -53,8 +53,8 @@ const displayCountry = (countries) => {
       const countryName = name.common;
       const countryCapital = capital;
 
-      return ` <a href="singleCountry.html">
-            <article class="single-country">
+      return ` <a href="singleCountry.html" data-aos="fade-up">
+            <article class="single-country" >
               <div class="single-country__wrapper">
                 <picture class="single-country__flag">
                   <img

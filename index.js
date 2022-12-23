@@ -17,3 +17,24 @@ window.addEventListener('DOMContentLoaded', function () {
 window.addEventListener('load', function () {
   loadingGif.classList.add('hide-loading');
 });
+
+//fixed nav bar
+const navBar = document.getElementById('filter-bar');
+const navHeight = navBar.getBoundingClientRect().height; //103px for pc
+const topLink = document.querySelector('.top-link');
+
+window.addEventListener('scroll', function () {
+  const scrollHeight = window.pageYOffset;
+  console.log(scrollHeight);
+  if (scrollHeight > navHeight) {
+    navBar.classList.add('fixed-nav');
+  } else {
+    navBar.classList.remove('fixed-nav');
+  }
+  //top link
+  if (scrollHeight > 500) {
+    topLink.classList.add('show-link');
+  } else {
+    topLink.classList.remove('show-link');
+  }
+});

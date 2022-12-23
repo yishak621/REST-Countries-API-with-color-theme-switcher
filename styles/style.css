@@ -489,4 +489,40 @@ select {
 .no-border {
   margin-top: 0;
   font-size: 1rem;
+}
+
+.top-link {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  display: grid;
+  place-items: center;
+  font-size: 1.25rem;
+  padding: 0.3rem 0.4rem;
+  border-radius: 50%;
+  background: hsl(7deg, 99%, 70%);
+  color: hsl(51deg, 100%, 49%);
+  border-color: green;
+  -webkit-animation: up 3s ease-in-out infinite;
+          animation: up 3s ease-in-out infinite;
+  visibility: hidden;
+  z-index: -100;
+  cursor: pointer;
+}
+
+.show-link {
+  visibility: visible;
+  z-index: 100;
+}
+
+/* fixed nav */
+.fixed-nav {
+  position: fixed;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.5s;
+  z-index: 12;
 }/*# sourceMappingURL=style.css.map */
