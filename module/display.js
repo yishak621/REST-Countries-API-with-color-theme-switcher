@@ -1,12 +1,16 @@
 import { getElement } from './getElement.js';
-import { fetchAllData } from './fetch.js';
+import { fetchAllData, fetchAllDataMain } from './fetch.js';
 import setCountry from './setCountry.js';
 import setupoptions from './btnFilter.js';
 import formatNum from './formatNum.js';
+import { showLoadingMain } from './loading.js';
+import { hideLoadingMain } from './loading.js';
 //SHOW country
 const showCountry = async (url) => {
   //fetch country
-  const data = await fetchAllData(url);
+  hideLoadingMain();
+  const data = await fetchAllDataMain(url);
+
   const section = await displayCountry(data);
   setupoptions(data); //dynamically adding the select options
 
@@ -26,6 +30,7 @@ const showCountry = async (url) => {
       }
     });
     displayCountry(filtered);
+    hideLoadingMain();
   });
 
   //if there is a country list
@@ -85,7 +90,7 @@ const displayCountry = (countries) => {
 
   //displaying them
   section.innerHTML = newCountry;
-
+  hideLoadingMain();
   return section;
 };
 

@@ -1,7 +1,7 @@
 import { getElement } from './module/getElement.js';
 import { fetchAllData } from './module/fetch.js';
 import displaySingleCountry from './module/displaySingleCountry.js';
-
+import { hideLoading } from './module/loading.js';
 //loading Gif
 const loadingGif = getElement('.loading');
 
@@ -15,12 +15,13 @@ const displayCountryDOM = async () => {
       `https://restcountries.com/v3.1/name/${id}`
     );
     displaySingleCountry(country);
+    hideLoading();
   }
 };
 
 //event
 window.addEventListener('DOMContentLoaded', displayCountryDOM);
 
-window.addEventListener('load', function () {
+window.addEventListener('DOMContentLoaded', function () {
   loadingGif.classList.add('hide-loading');
 });

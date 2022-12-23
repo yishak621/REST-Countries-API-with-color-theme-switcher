@@ -2,10 +2,12 @@ import { getElement } from './getElement.js';
 import formatNum from './formatNum.js';
 import { fetchAllData } from './fetch.js';
 import setCountry from './setCountry.js';
+import { hideLoading } from './loading.js';
 
 const displaySingleCountry = (data) => {
+  hideLoading();
   const countryData = data[0];
-  console.log(countryData);
+
   //declaration
   const nativeNameDOM = getElement('.native-result');
   const populationDOM = getElement('.population-result');
@@ -69,13 +71,31 @@ const displaySingleCountry = (data) => {
   image.alt = `${common} flag`;
   singleCountryTitle.textContent = common;
 
-  //Dynamically adding the buttons
+  //Dynamically adding the border buttons
   const borderCountry = getElement('.border-country__btn__wrapper');
-  borderCountry.innerHTML = borders
-    .map((border) => {
-      return `<button class="btn">${border}</button>`;
-    })
-    .join('');
+  if (borders) {
+    const finalresult = async () => {
+      //fetching datas using codes endpoint
+      const codes = borders
+        .map((border) => {
+          return border;
+        })
+        .join(',');
+      const newurl = `https://restcountries.com/v3.1/alpha?codes=${codes}`;
+      const borderCountries = await fetchAllData(newurl);
+
+      const newHTML = await borderCountries
+        .map((border) => {
+          return `<button class="btn">${border.name.common}</button>`;
+        })
+        .join('');
+
+      borderCountry.innerHTML = newHTML;
+    };
+    finalresult();
+  } else {
+    borderCountry.innerHTML = `<span class="error no-border">${common} have no border!</span>`;
+  }
 };
 //event listner for boarders btn
 const borderCountry = getElement('.border-country__btn__wrapper');
@@ -86,7 +106,7 @@ borderCountry.addEventListener('click', async (e) => {
   const allData = async (url) => {
     const data = await fetchAllData(url);
     const newDatalist = await data.find((obj) => {
-      return obj.cca3 === shortname;
+      return obj.name.common === shortname;
     });
 
     return newDatalist;
@@ -97,6 +117,9 @@ borderCountry.addEventListener('click', async (e) => {
   const country = await fetchAllData(
     `https://restcountries.com/v3.1/name/${nameofCountry}`
   );
+
   displaySingleCountry(country);
+  //the 0.5sec is the transition of texts
+  setTimeout(hideLoading, 250);
 });
 export default displaySingleCountry;
