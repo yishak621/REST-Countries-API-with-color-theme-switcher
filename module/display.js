@@ -53,31 +53,31 @@ const displayCountry = (countries) => {
       const countryName = name.common;
       const countryCapital = capital;
 
-      return ` <a href="singleCountry.html" data-aos="fade-up">
+      return ` <a href="singleCountry.html" data-aos="fade-up"  >
             <article class="single-country" >
-              <div class="single-country__wrapper">
+              <div class="single-country__wrapper"  >
                 <picture class="single-country__flag">
                   <img
-                    data-id="${countryName}"
+                 data-id="${countryName}"
                     src="${png}"
                     alt="${countryName} flag"
                   />
                 </picture>
-                <div class="single-country__discription">
-                  <h3>${countryName}</h3>
-                  <div class="single-country__discription__wrapper">
+                <div class="single-country__discription" data-id="${countryName}">
+                  <h3 data-id="${countryName}">${countryName}</h3>
+                  <div class="single-country__discription__wrapper" data-id="${countryName}">
                     <span class="single-country__population"
-                      ><span class="title population-title">Population:</span>
+                       data-id="${countryName}"><span class="title population-title">Population:</span>
                       <span class="population-number"> ${formatNum(
                         population
                       )}</span>
                     </span>
                     <span class="single-country__region"
-                      ><span class="title region-title">Region:</span
-                      ><span class="region-name"> ${region}</span>
+                      data-id="${countryName}"><span class="title region-title">Region:</span
+                      ><span class="region-name"  data-id="${countryName}"> ${region}</span>
                     </span>
                     <span class="single-country__capital"
-                      ><span class="title capital-title">Capital:</span
+                       data-id="${countryName}"><span class="title capital-title">Capital:</span
                       ><span class="country-capital"> ${countryCapital}</span>
                     </span>
                   </div>
